@@ -525,11 +525,11 @@ input[type="radio"]:checked{
     .firstblock{
         background-color: #ffffff;
         width: 95%;
-        height: 98%;
+        height: 95%;
         padding: 10px;
         border-radius: 10px;
         position: absolute;
-        top: 5%;
+        top: 2%;
         left: calc(50% - 47.5%);
     }
     .secondblock{
@@ -539,7 +539,7 @@ input[type="radio"]:checked{
         align-items: center;
         flex-direction: column;
         position: absolute;
-        top: 105%;
+        top: 98%;
         bottom: 10%;
         left: calc(50% - 47.5%);
         width: 95%;
@@ -706,5 +706,4 @@ input[type="radio"]:checked{
         cursor: pointer;
         padding-left: 10px;
     }
-    
 }
