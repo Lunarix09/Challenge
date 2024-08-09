@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer=""></script>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/e74ebd5341.js"crossorigin="anonymous"></script>
+    <title>mortage_calculator</title>
+</head>
+<body>
+    <div class="firstblock">
+        <form method="get" action="" class="calculate_choice">
+            <div class="firstrow">
+                <p>Mortage Calculator</p>
+                <button class="clear">Clear All</button>
+            </div>
+            <div class="secondrow">
+                <p class="p">Mortage Amount</p>
+                <div class="secondrow_1 ">
+                    <p class="fa_sterling_container"><i class="fa-solid fa-sterling-sign"></i></p>
+                    <input  type="text" class="mortage_amount">
+                </div>
+                <p class="p_error">This field is required</p>
+            </div>
+            <div class="thirdrow">
+                <p class="p">Mortage Term</p>
+                <div class="thirdrow_1">
+                    <input type="text" class="mortage_term">
+                    <p class="p_years">years</p>
+                </div>
+                <p class="p_error_1">This field is required</p>
+            </div>
+            <div class="fourthrow">
+                <p class="p">Interest Rate</p>
+                <div class="fourthrow_1">
+                    <input type="text" class="interest_rate">
+                    <p class="fa-light_container"><i class="fa-light fa-percent"></i></p>
+                </div>
+                <p class="p_error_2">This field is required</p>
+            </div>
+            <div class="fifthrow">
+                <p class="p">Mortage Type</p>
+                <span class="radiospan_1 radiospan_1_1">
+                    <input required type="radio" id="repayement" name="mortage_type" value="repayement">
+                    <label for="repayement" class="label">Repayement</label>
+                </span><br>
+                <span class="radiospan_2 radiospan_2_2">
+                    <input required type="radio" id="interest_only" name="mortage_type" value="interest_only">
+                    <label for="interest_only" class="label">Interest Only</label>
+                </span><br>
+                <p class="p_error_3">This field is required</p>
+                <button class="calculate"><img src="images\icon-calculator.svg" alt="icon-calculator">Calculate Repayements</button>
+            </div>
+        </form>
+    </div>
+    <div class="secondblock second_block second_block_1">
+        <div class="secondblock_1">
+            <img src="images/illustration-empty.svg" alt="illustration-empty">
+            <h1>Results shown here</h1>
+            <p>Complete the form and click "Calculate Repayements" to see what your monthly repayements would be.</p>
+        </div>
+        <div class="secondblock_2">
+            <div class="secondblock_2_1">
+                <h1 class="h1">Your results</h1>
+                <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "Calculate Repayements" again.</p>
+                <div class="results">
+                    <p>Your monthly repayements</p>
+                    <p class="p1"><i class="fa-solid fa-sterling-sign"></i><span>0</span></p>
+                    <hr> 
+                    <p>Total you'll repay over the term</p>
+                    <h1><i class="fa-solid fa-sterling-sign"></i><span>0</span></h1>               
+                </div>
+            </div>
+            <div class="results_interest_only">
+                <h1>Interest total due</h1>
+                <p class="p1"><i class="fa-solid fa-sterling-sign"></i><span>0</span></p>      
+            </div>
+        </div>
+    </div>
+</body>
+</html>
