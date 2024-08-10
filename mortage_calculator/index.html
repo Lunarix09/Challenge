@@ -22,14 +22,14 @@
                 <p class="p">Mortage Amount</p>
                 <div class="secondrow_1 ">
                     <p class="fa_sterling_container"><i class="fa-solid fa-sterling-sign"></i></p>
-                    <input  type="text" class="mortage_amount">
+                    <input  type="number" class="mortage_amount">
                 </div>
                 <p class="p_error">This field is required</p>
             </div>
             <div class="thirdrow">
                 <p class="p">Mortage Term</p>
                 <div class="thirdrow_1">
-                    <input type="text" class="mortage_term">
+                    <input type="number" min="0" step="0.01" class="mortage_term">
                     <p class="p_years">years</p>
                 </div>
                 <p class="p_error_1">This field is required</p>
@@ -37,7 +37,7 @@
             <div class="fourthrow">
                 <p class="p">Interest Rate</p>
                 <div class="fourthrow_1">
-                    <input type="text" class="interest_rate">
+                    <input type="number" min="0.01" class="interest_rate">
                     <p class="fa-light_container"><i class="fa-light fa-percent"></i></p>
                 </div>
                 <p class="p_error_2">This field is required</p>
