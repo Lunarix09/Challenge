@@ -6,11 +6,13 @@ function calculateMonthlyPayment(principal, annualRate, years) {
     let monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
     let totalPaid= monthlyPayment * numberOfPayments;
 
-    p1_span_monthly_repayements.innerText= monthlyPayment.toFixed(2)//.toLocaleString(en-EN);
-    results_h1_span_total_repayements.innerText= totalPaid.toFixed(2)//.toLocaleString(en-EN);
+    p1_span_monthly_repayements.innerText= formatter.format(monthlyPayment.toFixed(2)) //.toLocaleString(en-EN);
+    results_h1_span_total_repayements.innerText= formatter.format(totalPaid.toFixed(2))//.toLocaleString(en-EN);
     console.log(monthlyPayment.toFixed(2), totalPaid.toFixed(2));
 };
 
+// Utilisation de Intl.NumberFormat pour le formatage des nombres
+const formatter = new Intl.NumberFormat('en-US');
 let mortage_amount_input= document.querySelector(".mortage_amount");
 let mortage_term_input= document.querySelector(".mortage_term");
 let interest_rate_input= document.querySelector(".interest_rate");
@@ -195,6 +197,6 @@ document.querySelector(".calculate").addEventListener("click", (event)=>{
         //let options= {minimumFractionDigits: 2, maximumFractionDigits: 2};
         //let interest_1= interest.toLocaleString("en-En", options);
         console.log(interest);
-        document.querySelector(".results_interest_only span").innerText= interest;
+        document.querySelector(".results_interest_only span").innerText= formatter.format(interest);
     }
 });
