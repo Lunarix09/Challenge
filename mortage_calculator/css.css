@@ -322,6 +322,10 @@ input[type="radio"]:checked{
     padding: 10px;
     margin-top: 20px;
 }
+.results_interest_only p{
+    margin-top: 20px;
+}
+
 /*responsive*/
 @media screen and (max-width:375px) {
     body{
