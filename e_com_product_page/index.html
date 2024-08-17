@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E_Commerce_Product_Page</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+    </style>
+</head>
+
+<body class="body">
+    <div class="header_bar">
+        <div class="menu">
+            <button class="fa-bars_container"><i class="fa-solid fa-bars"></i></button>
+            <img src="images\logo.svg" alt="logo sneaker">
+            <ul>
+                <li><a href="#">Collection</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="header_bar_end">
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart_exponent">0</span>
+                <div class="cart_content_popup_bacground">
+                        <div class="cart_content_popup">
+                            <span class="empty_cart">
+                                <p class="first_p">Cart</p>
+                                <hr>
+                                <span class="empty_p"><p>Your cart is empty!</p></span>
+                            </span>
+                            
+                            <div class="unempty_cart">
+                                <p class="first_p">Cart</p>
+                                <hr>
+                                <div>
+                                    <span><img src="images\image-product-1-thumbnail.jpg" alt="sneakers_1"></span>
+                                    <span class="container">
+                                        <p class="second_p">Fall Limites Edition Sneakers</p>
+                                        <p class="second_p">$125.00 &nbsp x
+                                            <span class="second_p sneakers_number">1 &nbsp; &nbsp;</span>
+                                            <span class="sneaker_total_price">$0.00</span>
+                                        </p>
+                                    </span>
+                                    <span><i class="fa-solid fa-trash-can"></i></span>
+                                </div>
+                                <span><button>Checkout</button></span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <img src="images\image-avatar.png" alt="avatar">
+        </div>
+    </div>
+    <div class="both_sides">
+        <div class="left_side">
+            <div class="navigation_buttons">
+                <button class="navigation_button_previous"><i class="fa-solid fa-circle-chevron-left"></i></button>
+                <button class="navigation_button_next"><i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+            <div class="main_images"><img  src="images\image-product-1.jpg" alt="sneaker"></div>
+            <div class="thubnails_images">
+                <span class="thubnail_1_container"><img class="thubnail_1" src="images\image-product-1-thumbnail.jpg" alt="sneakers_1"></span>
+                <span class="thubnail_2_container"><img class="thubnail_2"  src="images\image-product-2-thumbnail.jpg" alt="sneakers_2"></span>
+                <span class="thubnail_3_container"><img class="thubnail_3"  src="images\image-product-3-thumbnail.jpg" alt="sneakers_3"></span>
+                <span class="thubnail_4_container"><img class="thubnail_4"  src="images\image-product-4-thumbnail.jpg" alt="sneakers_4"></span>
+            </div>
+        </div>
+
+        <div class="right_side">
+            <div class="text">
+                <p class="sneaker_company">SNEAKER COMPANY</p>
+                <h1 class="h1_1">Fall Limites Edition Sneakers</h1>
+                <p class="paragraph">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll whistand everything the wheather can offer.</p>
+                <div class="prices_line">
+                    <div>
+                        <h2>$125.00</h2>
+                        <span><p>50%</p></span>
+                    </div>
+                    <div><p class="price">$250.00</p></div>
+                </div>
+                
+            </div>
+            <div class="aligned_buttons">
+                <div class="minus_plus">
+                    <button class="minus_button"><i class="fa-solid fa-minus"></i></button>
+                    <span>0</span>
+                    <button class="plus_button"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <button class="add_to_cart"><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="left_side_popup_background">
+        <div class="popup">
+            <span class="close_button_container"><i class="fa-solid fa-xmark"></i></span>
+            <div class="navigation_buttons">
+                <button class="navigation_button_previous"><i class="fa-solid fa-circle-chevron-left"></i></button>
+                <button class="navigation_button_next"><i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
+            <div class="left_side_popup">
+                <div class="popup_main_images"><img  src="images\image-product-1.jpg" alt="sneaker"></div>
+                <div class="popup_thubnails_images">
+                    <span class="popup_thubnail_1_container"><img class="thubnail_1" src="images\image-product-1-thumbnail.jpg" alt="sneakers_1"></span>
+                    <span class="popup_thubnail_2_container"><img class="thubnail_2"  src="images\image-product-2-thumbnail.jpg" alt="sneakers_2"></span>
+                    <span class="popup_thubnail_3_container"><img class="thubnail_3"  src="images\image-product-3-thumbnail.jpg" alt="sneakers_3"></span>
+                    <span class="popup_thubnail_4_container"><img class="thubnail_4"  src="images\image-product-4-thumbnail.jpg" alt="sneakers_4"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side_bar">
+        <span class="close_button_container"><i class="fa-solid fa-xmark"></i></span>
+        <ul>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>  
+    </div>
+</body>
+</html>
