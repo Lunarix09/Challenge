@@ -25,9 +25,7 @@ body{
     background-color: transparent;
     padding: 16px;
 } 
-.fa-bars_container{
-    display: none;
-}
+.fa-bars_container{ display: none;}
 .menu{
     display: flex;
     flex-direction: row;
@@ -67,9 +65,9 @@ body{
    width: 0%;
    height: 3px;
    background-color: hsl(26, 100%, 55%);
-   transition: 0.2s ease-out;
+   transition: 0.3s ease-out;
 } 
-.menu ul a:hover::after{width:130%;} 
+.menu ul a:hover::after{width:100%;} 
 .header_bar_end{
     display: flex;
     align-items: center;
@@ -193,9 +191,7 @@ body{
     color: hsl(0, 0%, 0%);
     font-weight: 600;
 }
-.cart_content_popup .sneakers_number{
-    margin-right: 20px;
-}
+.cart_content_popup .sneakers_number{margin-right: 20px;}
 .cart_content_popup div .fa-trash-can{
     width: 20px;
     height: 20px;
@@ -225,9 +221,7 @@ body{
     font-size: 18px;
     background-color: hsl(25, 100%, 94%);
 }
-.cart_content_popup button:active{
-    transform: scale(1.1);
-}
+.cart_content_popup button:active{transform: scale(1.1);}
 .both_sides{
     display: flex;
     flex-direction: row;
@@ -259,9 +253,7 @@ body{
     cursor: pointer;
     border-radius: 130px;
 }
-.left_side .navigation_buttons button i{
-    font-size: 40px;
-}
+.left_side .navigation_buttons button i{font-size: 40px;}
 .left_side{
     display: grid;
     grid-template-columns: 90%;
@@ -270,6 +262,7 @@ body{
     justify-content: center;
     width: 45%;
     margin-right: 20px;
+    
 }
 .main_images{
     grid-column: 1;
@@ -283,9 +276,7 @@ body{
     cursor: pointer;
     transition: 0.15s ease-out;
 }
-.main_images img:active{
-    transform: scale(1.2);
-}
+.main_images img:active{transform: scale(1.2);}
 .thubnails_images{
     grid-column: 1;
     display: grid;
@@ -321,18 +312,10 @@ body{
 }  
 .thubnails_images img:hover{opacity: 0.5;} 
 .thubnails_images img:active{opacity: 0.3;}   
-.thubnails_1_container img{
-    grid-column: 1;
-}
-.thubnail_2_container img{
-    grid-column: 2;
-}
-.thubnail_3_container img{
-    grid-column: 3;
-} 
-.thubnail_4_container img{
-    grid-row: 4;
-}
+.thubnails_1_container img{grid-column: 1;}
+.thubnail_2_container img{grid-column: 2;}
+.thubnail_3_container img{grid-column: 3;} 
+.thubnail_4_container img{grid-row: 4;}
 .right_side{
     display: flex;
     flex-direction: column;
@@ -417,15 +400,9 @@ button{
     background-color: transparent;
     color: hsl(26, 100%, 55%);
 }
-.aligned_buttons .minus_plus button{
-    background-color: transparent;
-}
-.aligned_buttons .minus_plus button:hover{
-    transform: scale(1.2);
-}
-.aligned_buttons .minus_plus button:active{
-    transform: scale(1.4);
-}
+.aligned_buttons .minus_plus button{background-color: transparent;}
+.aligned_buttons .minus_plus button:hover{transform: scale(1.2);}
+.aligned_buttons .minus_plus button:active{transform: scale(1.4);}
 .aligned_buttons .add_to_cart{
     display: flex;
     justify-content: center;
@@ -448,9 +425,7 @@ button{
     background-color: hsl(25, 100%, 94%);
     font-size: 18px;
 }
-.aligned_buttons .add_to_cart:active{
-    transform: scale(1.1);
-}
+.aligned_buttons .add_to_cart:active{transform: scale(1.1);}
 .left_side_popup_background{
     display: none;
     position: fixed;
@@ -479,13 +454,15 @@ button{
 }
 .popup .fa-xmark{
     color: hsl(0, 0%, 100%);
-    font-size: 25px;
-    transition: 0.15s ease-out;
+    font-size: 30px;
 }
-.popup .fa-xmark:hover{
+.fa-xmark:hover{
     color: hsl(26, 100%, 55%);
+    transform: rotate(-90deg);
+    transition:  0.25s ease-out;
 }
-.popup .fa-xmark:active{
+.fa-xmark:active{
+    transition: trasform 0.15s ease-out;
     transform: scale(1.2);
 }
 .popup .navigation_buttons{
@@ -503,14 +480,21 @@ button{
     align-items: center;
     transition: 0.15s ease-out;
     border-radius: 130px;
+    width: 36px;
+    height: 36px;
 }
-.navigation_buttons button:hover, .left_side_navigation_buttons button:hover{
+.navigation_buttons button:hover{
     background-color: hsl(26, 100%, 55%);
 }
-.navigation_buttons button:active, .left_side_navigation_buttons button:active{
-    transform: scale(1.2);
+.navigation_buttons .navigation_button_previous:active{
+    transform: translate(-50%, 0);
+    transition: transform 0.1s ease-out;
 }
-.navigation_buttons button i, .left_side_navigation_buttons button i{
+.navigation_buttons .navigation_button_next:active{
+    transform: translate(50%, 0);
+    transition: transform 0.1s ease-out;
+}
+.navigation_buttons button i{
     color: hsl(0, 0%, 100%);
     font-size: 35px;
 }
@@ -523,9 +507,7 @@ button{
     width: 100%;
     height: 85%;
 }
-.popup .popup_main_images{
-    grid-column: 1;
-}
+.popup .popup_main_images{grid-column: 1;}
 .popup button{
     width: 35px;
     height: 35px;
@@ -591,17 +573,10 @@ button{
     cursor: pointer;
 }
 .side_bar .close_button_container i{
-    display: flex;
-    align-items: start;
-    font-size: 25px;
-    transition: 0.2s ease-out;
+    font-size: 30px;
+    color: hsl(220, 14%, 75%);
 }
-.side_bar .close_button_container i:hover{
-    color: hsl(26, 100%, 55%);
-}
-.side_bar .close_button_container i:active{
-    transform: scale(1.2);
-}
+.side_bar .close_button_container i:hover{color: hsl(26, 100%, 55%);}
 .side_bar ul{
     display: flex;
     flex-direction: column;
@@ -635,17 +610,15 @@ button{
 }
 /* Responsive */
 @media screen and (max-width:1105px){
+    .header_bar_end{width: 12%;}
     .both_sides{
         height: 45%;
         width: 80%;
         margin-left:10%;
     }
-    .left_side{
-        width: 70%;
-    }
-    .right_side{
-        width: 35%;
-    }
+    .left_side{width: 70%;}
+    .right_side{width: 35%;}
+    .text .h1_1{ font-size: 35px;}
 }
 @media screen and (max-width:872px){
     .both_sides{
@@ -653,6 +626,9 @@ button{
         width: 85%;
         margin-left:7.5%;
     }
+    .text .h1_1{font-size: 30px;}
+    .menu{ width: 55%;}
+    .menu img{margin-right: 15px;}
 }
 @media screen and (max-width:800px){
     .header_bar{
@@ -681,15 +657,13 @@ button{
         align-items: center;
     } 
     .menu img{
-        width: 90px;
+        width: 50px;
         height: 25px;
         margin-left: 25px;
         margin-right: 0px;
         cursor: none;
     }
-    .menu ul{
-        display: none;
-    } 
+    .menu ul{display: none;} 
     .fa-bars_container{
         display: flex;
         background-color: transparent;
@@ -698,22 +672,17 @@ button{
         width: 25px;
         background-color: transparent;
     }
-    .fa-bars_container i{
-        font-size: 25px;
-    }
+    .fa-bars_container i{font-size: 25px;}
     .fa-bars_container i:hover{
         color: hsl(26, 100%, 55%);
         transform: scale(1.1);
     }
     .fa-bars_container i:active{
-        transform: scale(1.2);
+        transform: perspective(150px) rotateX(45deg);
+        transition: 0.3s ease-out;
     }
-    .header_bar_end{
-        width: 30%;
-    }
-    .header_bar_end .cart i{
-        margin-right: -10px;
-    }
+    .header_bar_end{width: 30%;}
+    .header_bar_end .cart i{margin-right: -10px;}
     .cart_content_popup{
         position: relative;
         top: 30%;
@@ -749,20 +718,17 @@ button{
         right: 21%;
         z-index: 1;
     }
-    
     .main_images{
         width: 80%;
-       margin-bottom: 6%;
-       height: 60%;
+        margin-bottom: 6%;
+        height: 60%;
     }
     .main_images img{
         width: 100%;
-       margin: 0%;
-       height: 100%;
+        margin: 0%;
+        height: 100%;
     }
-    .thubnails_images{
-        display: none;
-    }
+    .thubnails_images{display: none;}
     .right_side{
         display: flex;
         flex-direction: column;
@@ -770,17 +736,13 @@ button{
         align-items: center;
         width: 100%;
     }
-    .text .h1_1{
-        font-size: 30px;
-    }
+    .text .h1_1{font-size: 30px;}
     .text .prices_line{
         display: flex;
         flex-direction:row;
         justify-content: space-between;
     }
-    .text .prices_line .price{
-        margin-left: 20px;
-    }
+    .text .prices_line .price{margin-left: 20px;}
     .aligned_buttons{
         display: flex;
         flex-direction: column;
@@ -803,6 +765,34 @@ button{
     }
 }
 @media screen and (max-width:475px){
+    body{padding: 6px;}
+    .header_bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 6px;
+    }
+    .header_bar_end{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 39%;
+    }
+    .header_bar_end .cart{margin-right: 2%;}
+    .header_bar_end .cart .cart_exponent{
+        width: 20px;
+        height: 18px;
+        position: relative;
+        top: -10px;
+        left: -2px;
+    }
+    .header_bar_end .cart .fa-cart-shopping{font-size: 20px;}
+    .menu{width: 50%;}
+    .menu img{
+        width: 60px;
+        height: 28px;
+        margin-left: 10px;
+    }
     .main_images{
         width: 100%;
         height: 70%;
@@ -810,10 +800,11 @@ button{
         padding: 0%;
     }
     .left_side, .right_side{width: 102%;}
+    .text .h1_1{font-size: 22px;}
     .cart_content_popup{
         width: 90%;
         position: relative;
-        top: 25%;
+        top: 30%;
         left: 50%;
     }
     .left_side .navigation_buttons{
@@ -822,4 +813,5 @@ button{
         right: 10%;
         width: 80%;
     }
+    .side_bar{width: 52%;}
 }

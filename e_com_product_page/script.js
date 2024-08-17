@@ -1,17 +1,20 @@
 function show_hide_cart_popup(){
     document.querySelector(".cart .fa-cart-shopping").addEventListener("click",()=>{
-        document.querySelector(".cart .cart_content_popup_bacground").classList.add("active");
+        setTimeout(() => {document.querySelector(".cart .cart_content_popup_bacground").classList.add("active");
+        }, 95);
     });
     document.querySelector(".cart .cart_content_popup_bacground").addEventListener("click", (event) => {
         if (event.target === document.querySelector(".cart .cart_content_popup_bacground")) {
-            document.querySelector(".cart .cart_content_popup_bacground").classList.remove("active");
+            setTimeout(() => {document.querySelector(".cart .cart_content_popup_bacground").classList.remove("active");
+            }, 95);
         }
     })
 }show_hide_cart_popup()
 function show_hide_left_side_popup(){
     document.querySelector(".both_sides .left_side .main_images img").addEventListener("click",()=>{
         if (window.innerWidth > 800) {
-            document.querySelector(".left_side_popup_background").classList.add("active");
+            setTimeout(() => {document.querySelector(".left_side_popup_background").classList.add("active");
+            }, 95);
         }
     });
     document.querySelector(".left_side_popup_background").addEventListener("click", (event) => {
@@ -24,10 +27,12 @@ function show_hide_left_side_popup(){
     })
 }show_hide_left_side_popup();
 document.querySelector(".side_bar .close_button_container").addEventListener("click", () => {
-    document.querySelector(".side_bar").classList.remove("active");
+    setTimeout(() => {document.querySelector(".side_bar").classList.remove("active");
+    }, 95);
 });
 document.querySelector(".fa-bars_container").addEventListener("click", () => {
-    document.querySelector(".side_bar").classList.add("active");
+    setTimeout(() => {document.querySelector(".side_bar").classList.add("active");
+    }, 95);
 });
 
 let main_images_img = document.querySelector(".left_side .main_images img");
@@ -113,7 +118,7 @@ document.querySelector(".minus_plus .minus_button").addEventListener("click", ()
     if (i > 0) {document.querySelector(".minus_plus span").innerText= i-=1;}
 });
 document.querySelector(".minus_plus .plus_button").addEventListener("click", () =>{
-        document.querySelector(".minus_plus span").innerText= i+=1;
+    document.querySelector(".minus_plus span").innerText= i+=1;
 });
 document.querySelector(".aligned_buttons .add_to_cart").addEventListener("click", () =>{
     document.querySelector(".cart .cart_exponent").innerText= i;
