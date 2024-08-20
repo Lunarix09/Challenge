@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
 }
 body{background-color: hsl(47, 88%, 63%);}
 .card{
