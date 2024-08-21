@@ -487,11 +487,11 @@ button{
     background-color: hsl(26, 100%, 55%);
 }
 .navigation_buttons .navigation_button_previous:active{
-    transform: translate(-3%, 0);
+    transform: translate(-6%, 0);
     transition: transform 0.1s ease-out;
 }
 .navigation_buttons .navigation_button_next:active{
-    transform: translate(3%, 0);
+    transform: translate(6%, 0);
     transition: transform 0.1s ease-out;
 }
 .navigation_buttons button i{
