@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <title>Contact Form</title>
+</head>
+<body>
+    <div class="form_container">
+        <h1>Contact Us</h1>
+        <form method="get" action="">
+            <span class="first_name_container">
+                <label for="first_name">First Name <p class="required">&nbsp; *</p></label>
+                <input type="text" id="first_name" placeholder="Peter">
+                <p class="p_error">This field is required</p>
+            </span>
+            
+            <span class="last_name_container">
+                <label for="last_name">Last Name <p class="required">&nbsp; *</p></label>
+                <input type="text" id="last_name" placeholder="PARK">
+                <p class="p_error">This field is required</p>
+            </span>
+
+            <span class="email_container">
+                <label for="email">Email Address <p class="required">&nbsp; *</p></label>
+                <input type="email" id="email" placeholder="ex: email@example.com">
+                <p class="p_error">This field is required</p>
+            </span>
+
+            <span class="query_type_container">
+                <label for="general_enquiry">Query Type <p class="required">&nbsp; *</p></label>
+                <span class="query_type_container_1">
+                    <span class="radio_1">
+                        <input type="radio" name="query_type" id="general_enquiry" value="General Enquiry">
+                        <label for="general_enquiry">General Enquiry</label>
+                    </span>
+                    <span  class="radio_2">
+                        <input type="radio" name="query_type" id="support_request" value="Support Request">
+                        <label for="support_request">Support Request</label>
+                    </span>
+                    <p class="p_error">This field is required</p>
+                </span>
+            </span>
+
+            <span class="message_container">
+                <label for="message">Message <p class="required">&nbsp; *</p></label>
+                <textarea name="message" id="message"></textarea>
+                <p class="p_error">This field is required</p>
+            </span>
+            
+
+            <span class="consent_1">
+                <input type="checkbox" name="consent" id="consent">
+                <span>
+                    <label for="consent">I consent to being contacted by the team</label>
+                    <p class="p_error">To submit this form, please consent to being contacted</p>
+                </span>
+            </span>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="message_sent">
+        <h2>Message sent!</h2>
+        <p>Thanks for completing the form. We'll be in touch soon.</p>
+    </div>
+</body>
+</html>
