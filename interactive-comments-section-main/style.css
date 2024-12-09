@@ -88,6 +88,27 @@ body{
     margin-bottom: 15px;
     padding: 10px;
 }
+.comment_4_a{
+    border: none;
+    animation: comment_4_a 0.5s forwards;
+}
+@keyframes comment_4_a{
+    1%{
+        border-left: 2px solid hsl(238, 40%, 52%);
+    }
+    25%{
+        border-top: 2px solid hsl(238, 40%, 52%);
+    }
+    50%{
+        border-right: 2px solid hsl(238, 40%, 52%);
+    }
+    75%{
+        border-bottom: 2px solid hsl(238, 40%, 52%);
+    }
+    100%{
+        border: 2px solid hsl(238, 40%, 52%);
+    }
+}
 .minus_plus{
     display: flex;
     flex-direction: column;
@@ -122,6 +143,7 @@ body{
 }
 .paragraph{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     font-size: 16px;
     color: hsl(211, 10%, 45%);
@@ -561,9 +583,9 @@ button.reply img{
 .responsives{
    display: none;
 }
-.wait p{
-   color: hsl(212, 24%, 26%);
-   
+.reference, .reference a{
+   color: hsl(238, 40%, 52%);
+   font-weight: 700;
 }
 @media screen and (max-width:250px) and (min-width: 50px){
     .delete_popup .div2{

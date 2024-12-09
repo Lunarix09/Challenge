@@ -53,7 +53,7 @@ function send(event) {
                 }                
                 
                 comment.querySelector(".p2").innerText= day + " day(s) ago";
-
+                
                 comment.querySelector(".paragraph").innerText= userInput;
                 comment.querySelector(".reply").classList.add(`reply_${j}`);
                 comment.classList.add(`comment_${j}`);
@@ -77,7 +77,24 @@ function send(event) {
                     }
 
                     if (comment_find) {
-                        
+                        let reference = document.createElement("p");
+                        reference.classList.add("reference")
+                        //reference.innerHTML= "@" + comment_find.querySelector(".p1").textContent + "&nbsp;";
+                        // Génère un ID unique pour l'élément cible s'il n'en a pas
+                        if (!comment_find.querySelector(".p1").id) {
+                            comment_find.querySelector(".p1").id = "target-" + Math.random().toString(36).substring(2, 9);
+                        }
+
+                        // Ajoute un lien ancré au contenu
+                        reference.innerHTML = `<a href="#${comment_find.querySelector(".p1").id}">@${comment_find.querySelector(".p1").textContent}</a>&nbsp;`;
+                        reference.addEventListener("click",() => {
+                            comment_find.classList.add("comment_4_a");
+                            setTimeout(() => {
+                                comment_find.classList.remove("comment_4_a");
+                            }, 800);
+                        })
+                        comment.querySelector(".paragraph").insertAdjacentElement("afterbegin", reference);
+
                         let replies_cell= comment_find.closest(".replies");
                         if (replies_cell) {
 
