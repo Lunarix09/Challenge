@@ -30,7 +30,7 @@ function send(event) {
     if (userInput) {            
             date = `${day} /${month} /${year}`;
 
-            if (btn_update_clicked || btn_update_parent) {
+            if (btn_update_clicked) {
                 console.log(userInput);
 
                 let text = btn_update_parent.querySelector(".paragraph .text");
@@ -53,9 +53,12 @@ function send(event) {
                 
                 btn_update_parent.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
                 
-                btn_update_parent="";
-                btn_update= "";
+                
                 btn_update_clicked= false;
+                if(!btn_update_clicked){
+                    btn_update_parent="";
+                    btn_update= "";
+                }
             } else {
                 let comment= "";
                 
