@@ -58,7 +58,7 @@ function send(event) {
             } else {
                 let comment= "";
                 
-                comment= createCommentElement();              
+                //comment= createCommentElement();              
                 
                 comment.querySelector(".p2").innerText= date;
                 
