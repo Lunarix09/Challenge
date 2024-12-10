@@ -30,7 +30,7 @@ function send(event) {
     if (userInput) {            
             date = `${day} /${month} /${year}`;
 
-            if (btn_update_clicked) {
+            if (btn_update_clicked || btn_update_parent) {
                 console.log(userInput);
 
                 let text = btn_update_parent.querySelector(".paragraph .text");
