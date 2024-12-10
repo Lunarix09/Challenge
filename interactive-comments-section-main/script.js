@@ -42,7 +42,11 @@ function send(event) {
                         node.textContent = userInput;
                     }
                 });
+                let text = btn_update_parent.querySelector(".paragraph .text");
                 
+                if (text) {
+                    text.textContent.trim()= userInput;
+                }
                 btn_update_parent.querySelector(".p2").innerHTML= date;
                 
                 btn_update_parent.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
@@ -367,7 +371,9 @@ function anothers_btns(x) {
                 btn_update_parent= btn_update.parentElement.parentElement.parentElement;
 
                 let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
-
+                let text = btn_update_parent.querySelector(".paragraph .text");
+                
+                
                 // Filtre les nœuds texte uniquement
                 let textContent = Array.from(childNodes)
                     .filter(node => node.nodeType === Node.TEXT_NODE) // Filtre les nœuds texte
@@ -375,6 +381,10 @@ function anothers_btns(x) {
                     .join("");                                       // Concatène les textes
                 
                 document.querySelector('.pop_up textarea').value= textContent;
+                if (text) {
+                    console.log(text)
+                    document.querySelector('.pop_up textarea').value= text.textContent.trim();
+                }
             }
     });
 
