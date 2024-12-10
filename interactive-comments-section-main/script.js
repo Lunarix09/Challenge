@@ -194,10 +194,10 @@ function createCommentElement() {
     let plusBtn = document.createElement("button");
     plusBtn.className = "plus_btn";
     plusBtn.textContent = "+";
-
-    minusPlus.appendChild(minusBtn);
-    minusPlus.appendChild(account);
+    
     minusPlus.appendChild(plusBtn);
+    minusPlus.appendChild(account);
+    minusPlus.appendChild(minusBtn);
 
     // Contenu principal du commentaire
     let commentContent = document.createElement("div");
