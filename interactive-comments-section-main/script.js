@@ -54,11 +54,12 @@ function send(event) {
                 btn_update_parent.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
                 
                 btn_update_parent="";
+                btn_update= "";
                 btn_update_clicked= false;
             } else {
                 let comment= "";
                 
-                //comment= createCommentElement();              
+                comment= createCommentElement();              
                 
                 comment.querySelector(".p2").innerText= date;
                 
@@ -253,9 +254,6 @@ function createCommentElement() {
             delete_btn_parent1= delete_btn.parentElement.parentElement.parentElement;
         }
 
-        let n1= parseInt(delete_btn_parent1.querySelector(".p2").innerText, 10);
-        if (n1 > 3) {
-
             document.querySelector('.delete_popup').classList.add("active", "fadein");
             document.querySelector('.delete_popup .div2').classList.add("fadeIn1");
             document.querySelector(".delete_y").addEventListener("click", () => {
@@ -271,7 +269,7 @@ function createCommentElement() {
                 console.log("n");
                 hide_delete_popup();
             })
-        }
+        
     });
 
     buttons.appendChild(deleteBtn);
@@ -300,6 +298,8 @@ function createCommentElement() {
 }
 let btn_update_clicked= false;
 let btn_update_parent="";
+let btn_update= "";
+
 
 function anothers_btns(x) {
     function hide_delete_popup() {
@@ -359,7 +359,7 @@ function anothers_btns(x) {
     });
 
     x.querySelector(".update").addEventListener("click", (event)=>{
-            let btn_update= event.currentTarget;
+            btn_update= event.currentTarget;
             if (btn_update) {
                 document.querySelector('.add_comment').classList.remove("rotateOut");
                 document.querySelector('.add_comment').classList.add("rotateIn");
@@ -374,7 +374,10 @@ function anothers_btns(x) {
 
                 let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
                 let text = btn_update_parent.querySelector(".paragraph .text");
-                
+                if (text) {
+                    console.log(text)
+                    document.querySelector('.pop_up textarea').value= text.textContent.trim();
+                }
                 
                 // Filtre les nœuds texte uniquement
                 let textContent = Array.from(childNodes)
@@ -383,10 +386,7 @@ function anothers_btns(x) {
                     .join("");                                       // Concatène les textes
                 
                 document.querySelector('.pop_up textarea').value= textContent;
-                if (text) {
-                    console.log(text)
-                    document.querySelector('.pop_up textarea').value= text.textContent.trim();
-                }
+    
             }
     });
 
