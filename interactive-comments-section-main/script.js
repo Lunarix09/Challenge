@@ -13,10 +13,13 @@ let j= 5;
 
 let comments = {};
 let new_replies = {};
-
-let add_comment_btn = false;
 let btn_reply_clicked = false;
 let btn_reply = "";
+
+let date = new Date(); // Date
+let day = date.getDate();// Jour du mois (1-31);
+let month = date.getMonth() + 1; // Mois (1-12, car indexé à partir de 0)
+let year = date.getFullYear(); // Année
 
 function send(event) {
     //event.preventDefault();
@@ -24,18 +27,23 @@ function send(event) {
 
     let userInput = document.querySelector('.comment_enter textarea').value.trim(); // Récupérer et nettoyer le contenu du textarea
     
-    if (userInput) {
-            //let container= document.createElement("div");
-            //container.id= `container_${j}`;
-            //document.querySelector('.column').appendChild(container);
-            
-            let date = new Date(); // Date
-                let day = date.getDate();// Jour du mois (1-31);
+    if (userInput) {            
+            date = `${day} /${month} /${year}`;
 
             if (btn_update_clicked && btn_update_parent) {
                 console.log(userInput);
-                btn_update_parent.querySelector(".paragraph").textContent= userInput;
-                btn_update_parent.querySelector(".p2").innerText= 0 + " day(s) ago";
+
+                let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
+
+                // Filtrer et conserver uniquement les nœuds texte, tout en modifiant leur contenu
+                Array.from(childNodes).forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        // Met à jour le texte du nœud texte
+                        node.textContent = userInput;
+                    }
+                });
+                
+                btn_update_parent.querySelector(".p2").innerHTML= date;
                 
                 btn_update_parent.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
                 
@@ -44,15 +52,9 @@ function send(event) {
             } else {
                 let comment= "";
                 
-                if (add_comment_btn) {
-                    comment= createCommentElement();
-                    add_comment_btn= false;
-                } else {
-                    console.log("cons", document.querySelector(".comment_4:not(.new)"));
-                    comment= document.querySelector(".comment_4:not(.new)").cloneNode(true);
-                }                
+                comment= createCommentElement();              
                 
-                comment.querySelector(".p2").innerText= day + " day(s) ago";
+                comment.querySelector(".p2").innerText= date;
                 
                 comment.querySelector(".paragraph").innerText= userInput;
                 comment.querySelector(".reply").classList.add(`reply_${j}`);
@@ -78,9 +80,7 @@ function send(event) {
 
                     if (comment_find) {
                         let reference = document.createElement("p");
-                        reference.classList.add("reference")
-                        //reference.innerHTML= "@" + comment_find.querySelector(".p1").textContent + "&nbsp;";
-                        // Génère un ID unique pour l'élément cible s'il n'en a pas
+                        reference.classList.add("reference");
                         if (!comment_find.querySelector(".p1").id) {
                             comment_find.querySelector(".p1").id = "target-" + Math.random().toString(36).substring(2, 9);
                         }
@@ -92,7 +92,7 @@ function send(event) {
                             setTimeout(() => {
                                 comment_find.classList.remove("comment_4_a");
                             }, 800);
-                        })
+                        });
                         comment.querySelector(".paragraph").insertAdjacentElement("afterbegin", reference);
 
                         let replies_cell= comment_find.closest(".replies");
@@ -118,7 +118,6 @@ function send(event) {
                     document.querySelector('.column').insertAdjacentElement('beforeend', comment);
                 }
                 comment.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
-                anothers_btns(comment);
                 j++;
         }
     }
@@ -197,7 +196,7 @@ function createCommentElement() {
     let firstRowDiv = document.createElement("div");
 
     let img = document.createElement("img");
-    img.src = "images/image-ramsesmiron.png";
+    img.src = "images/image-juliusomo.png";
     img.alt = "";
 
     let p1 = document.createElement("p");
@@ -210,7 +209,9 @@ function createCommentElement() {
 
     let p2 = document.createElement("p");
     p2.className = "p2";
-    p2.textContent = "1 day(s) ago";
+    date = `${day} /${month} /${year}`;
+
+    p2.textContent = date;
 
     firstRowDiv.appendChild(img);
     firstRowDiv.appendChild(p1);
@@ -277,7 +278,6 @@ function createCommentElement() {
     // Ajouter le paragraphe
     let paragraph = document.createElement("p");
     paragraph.className = "paragraph";
-    paragraph.textContent = "hdyddststst  tdr -trsts trtst fgt dt tt";
 
     // Assembler le contenu principal du commentaire
     commentContent.appendChild(firstRow);
@@ -315,25 +315,20 @@ function anothers_btns(x) {
         if (window.innerWidth <= 945) {
             delete_btn_parent1= delete_btn.parentElement.parentElement.parentElement;
         }
-
-        let n1= parseInt(delete_btn_parent1.querySelector(".p2").innerText, 10);
-        if (n1 > 3) {
-            document.querySelector('.delete_popup').classList.add("active", "fadein");
-            document.querySelector('.delete_popup .div2').classList.add("fadeIn1");
-            document.querySelector(".delete_y").addEventListener("click", () => {
-                console.log("y");
-                if (delete_btn_parent && delete_btn_parent.childNodes.length == 1) {
-                    delete_btn_parent.closest(".replies").remove();
-                }else{
-                    delete_btn_parent1.remove();
-                };
-                hide_delete_popup();
-            })
-            document.querySelector(".delete_n").addEventListener("click", () => {
-                console.log("n");
-                hide_delete_popup();
-            })
-        }else{alert("You can't delete an comment/reply who has been dated today.")}
+        
+        document.querySelector('.delete_popup').classList.add("active", "fadein");
+        document.querySelector('.delete_popup .div2').classList.add("fadeIn1");
+        document.querySelector(".delete_y").addEventListener("click", () => {
+        if (delete_btn_parent && delete_btn_parent.childNodes.length == 1) {
+            delete_btn_parent.closest(".replies").remove();
+        }else{
+            delete_btn_parent1.remove();
+        };
+            hide_delete_popup();
+        })
+        document.querySelector(".delete_n").addEventListener("click", () => {
+            hide_delete_popup();
+        })
     });
     
     let parent_btn = "";
@@ -363,15 +358,23 @@ function anothers_btns(x) {
                 document.querySelector('.add_comment').classList.remove("rotateOut");
                 document.querySelector('.add_comment').classList.add("rotateIn");
                 document.querySelector('.pop_up').classList.add("active");
+                
                 setTimeout(() => {
                     document.querySelector(".comment_enter").classList.add("fadeIn");
                 }, 1);
+
                 document.querySelector('.comment_enter textarea').focus(); 
-                btn_update_parent= btn_update.parentElement.parentElement.parentElement.parentElement;
+                btn_update_parent= btn_update.parentElement.parentElement.parentElement;
+
+                let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
+
+                // Filtre les nœuds texte uniquement
+                let textContent = Array.from(childNodes)
+                    .filter(node => node.nodeType === Node.TEXT_NODE) // Filtre les nœuds texte
+                    .map(node => node.textContent.trim())            // Nettoie les espaces
+                    .join("");                                       // Concatène les textes
                 
-                document.querySelector('.pop_up textarea').value= btn_update_parent.querySelector(".paragraph").textContent;
-                
-                btn_update_clicked= true;
+                document.querySelector('.pop_up textarea').value= textContent;
             }
     });
 
@@ -457,3 +460,12 @@ setInterval(() => {
         adjustResponsives(mediaQuery); // Appeler la fonction si le nombre a changé
     }
 }, 50); // Vérifier toutes les 50 ms
+
+document.querySelectorAll(".r").forEach(r => {
+        r.addEventListener("click",() => {
+        document.querySelector(".comment_2").classList.add("comment_4_a");
+        setTimeout(() => {
+            document.querySelector(".comment_2").classList.remove("comment_4_a");
+        }, 800);
+    });
+});

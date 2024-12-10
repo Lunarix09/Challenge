@@ -583,7 +583,7 @@ button.reply img{
 .responsives{
    display: none;
 }
-.reference, .reference a{
+.reference a{
    color: hsl(238, 40%, 52%);
    font-weight: 700;
 }
@@ -614,6 +614,9 @@ button.reply img{
     }
     .comment_1_content, .comment_2_content, .comment_3_content, .comment_4_content{
         width: 100%;
+    }
+    .first_row .h1{
+        margin-right: 12px;
     }
 }
 @media screen and (max-width:675px){
@@ -681,9 +684,6 @@ button.reply img{
     }
     .comment_4 .reply{
         margin-left: 4%;
-    }
-    .first_row .h1{
-        margin-right: 6px;
     }
     .first_row .p1{
         margin-right: 6px;
