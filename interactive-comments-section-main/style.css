@@ -124,7 +124,7 @@ body{
 .account{
     font-size: 16px;
     color: hsl(238, 40%, 52%);
-    font-weight: 500;
+    font-weight: 400;
 }
 .minus_btn, .plus_btn{
     width: 25px;
