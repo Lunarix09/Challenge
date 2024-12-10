@@ -33,6 +33,12 @@ function send(event) {
             if (btn_update_clicked && btn_update_parent) {
                 console.log(userInput);
 
+                let text = btn_update_parent.querySelector(".paragraph .text");
+                
+                if (text) {
+                    text.textContent= userInput;
+                }
+                
                 let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
 
                 // Filtrer et conserver uniquement les nœuds texte, tout en modifiant leur contenu
@@ -42,11 +48,7 @@ function send(event) {
                         node.textContent = userInput;
                     }
                 });
-                let text = btn_update_parent.querySelector(".paragraph .text");
                 
-                if (text) {
-                    text.textContent.trim()= userInput;
-                }
                 btn_update_parent.querySelector(".p2").innerHTML= date;
                 
                 btn_update_parent.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
