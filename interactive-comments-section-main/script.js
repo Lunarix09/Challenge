@@ -374,10 +374,7 @@ function anothers_btns(x) {
 
                 let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
                 let text = btn_update_parent.querySelector(".paragraph .text");
-                if (text) {
-                    console.log(text)
-                    document.querySelector('.pop_up textarea').value= text.textContent.trim();
-                }
+                
                 
                 // Filtre les nœuds texte uniquement
                 let textContent = Array.from(childNodes)
@@ -385,7 +382,11 @@ function anothers_btns(x) {
                     .map(node => node.textContent.trim())            // Nettoie les espaces
                     .join("");                                       // Concatène les textes
                 
-                document.querySelector('.pop_up textarea').value= textContent;
+                  document.querySelector('.pop_up textarea').value= textContent;
+                if (text) {
+                    console.log(text)
+                    document.querySelector('.pop_up textarea').value= text.textContent.trim();
+                }
     
             }
     });
