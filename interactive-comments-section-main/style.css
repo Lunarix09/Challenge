@@ -162,10 +162,7 @@ body{
     justify-content: space-between;
     width: 28%;
 }
-.comment_4 .first_row{
-    padding: 0px;
-    margin-bottom: 10%;
-}
+
 .first_row{
     width: 100%;
     padding: 10px;
@@ -501,6 +498,7 @@ button.reply img{
     padding: 20px 35px;
     background-color: hsla(240, 58%, 85%, 0.45);
     backdrop-filter: blur(1.3px);
+    opacity: 0;
     /*z-index: 10;*/
 }
 .fadeIn{ 
@@ -605,6 +603,19 @@ button.reply img{
         width: 70%;
     }
 }
+@media screen and (max-width: 270px) {
+    .buttons button {
+        text-indent: -999px; /* Masque le texte en le déplaçant hors de la zone visible */
+        /*white-space: nowrap;Empêche le retour à la ligne */
+        /*overflow: hidden;     Cache tout débordement */
+        padding-right: 15px;
+        color: transparent;
+        /*visibility: hidden;  Cache le contenu tout en laissant le bouton visible */
+    }
+    .buttons{
+        justify-content: space-between;
+    }
+}
 @media screen and (max-width:995px){
     .column{
         width: 85%;
@@ -617,6 +628,15 @@ button.reply img{
     }
     .first_row .h1{
         margin-right: 12px;
+    }
+    .comment_enter{
+        width: 85%;
+        padding: 8px;
+    }
+    .close_btn{
+        position: relative;
+        right: 0%;
+        top: 0%;   
     }
 }
 @media screen and (max-width:675px){
@@ -659,10 +679,10 @@ button.reply img{
         justify-content: start;
     }
     .column{
-        width: 95%;
+        width: 93%;
         position: absolute;
         top: 5%;
-        left: 2.5%;
+        left: 3.5%;
     }
     .comment_1_content, .comment_2_content, .comment_3_content, .comment_4_content{
         width: 100%;
@@ -704,7 +724,7 @@ button.reply img{
         left: 89%;
     }
     .comment_enter{
-        width: 96%;
+        width: 93%;
         padding: 8px;
     }
     .comment_enter img{

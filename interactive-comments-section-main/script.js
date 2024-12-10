@@ -16,6 +16,9 @@ let new_replies = {};
 let btn_reply_clicked = false;
 let btn_reply = "";
 
+let btn_update_clicked= false;
+let btn_update_parent="";
+
 let date = new Date(); // Date
 let day = date.getDate();// Jour du mois (1-31);
 let month = date.getMonth() + 1; // Mois (1-12, car indexé à partir de 0)
@@ -30,34 +33,35 @@ function send(event) {
     if (userInput) {            
             date = `${day} /${month} /${year}`;
 
-            if (btn_update || btn_update_parent) {
+            if (btn_update_parent) {
                 console.log(userInput);
 
-                let text = btn_update_parent.querySelector(".paragraph .text");
-                
-                if (text) {
-                    text.textContent= userInput;
-                }
-                
                 let childNodes = btn_update_parent.querySelector(".paragraph").childNodes;
 
-                // Filtrer et conserver uniquement les nœuds texte, tout en modifiant leur contenu
-                Array.from(childNodes).forEach(node => {
-                    if (node.nodeType === Node.TEXT_NODE) {
-                        // Met à jour le texte du nœud texte
-                        node.textContent = userInput;
-                    }
-                });
-                
+                let text = btn_update_parent.querySelector(".paragraph .text");
+
+                if (text) {
+                    text.textContent= "";
+                    text.textContent= userInput;
+                }else{
+                    // Filtrer et conserver uniquement les nœuds texte, tout en modifiant leur contenu
+                    Array.from(childNodes).forEach(node => {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            // Met à jour le texte du nœud texte
+                            node.textContent = "";
+                            node.textContent = userInput;
+                        }
+                    });
+                }
                 btn_update_parent.querySelector(".p2").innerHTML= date;
                 
                 btn_update_parent.scrollIntoView({behavior: 'smooth' }); // Faire défiler vers le commentaire
                 
                 
                 btn_update_clicked= false;
-                if(!btn_update_clicked){
+                if (!btn_update_clicked) {
                     btn_update_parent="";
-                    btn_update= "";
+                    btn_update="";
                 }
             } else {
                 let comment= "";
@@ -257,6 +261,9 @@ function createCommentElement() {
             delete_btn_parent1= delete_btn.parentElement.parentElement.parentElement;
         }
 
+        let n1= parseInt(delete_btn_parent1.querySelector(".p2").innerText, 10);
+        if (n1 > 3) {
+
             document.querySelector('.delete_popup').classList.add("active", "fadein");
             document.querySelector('.delete_popup .div2').classList.add("fadeIn1");
             document.querySelector(".delete_y").addEventListener("click", () => {
@@ -272,7 +279,7 @@ function createCommentElement() {
                 console.log("n");
                 hide_delete_popup();
             })
-        
+        }
     });
 
     buttons.appendChild(deleteBtn);
@@ -299,9 +306,6 @@ function createCommentElement() {
 
     return comment;
 }
-let btn_update_clicked= false;
-let btn_update_parent="";
-let btn_update= "";
 
 
 function anothers_btns(x) {
@@ -362,7 +366,7 @@ function anothers_btns(x) {
     });
 
     x.querySelector(".update").addEventListener("click", (event)=>{
-            btn_update= event.currentTarget;
+            let btn_update= event.currentTarget;
             if (btn_update) {
                 document.querySelector('.add_comment').classList.remove("rotateOut");
                 document.querySelector('.add_comment').classList.add("rotateIn");
@@ -385,12 +389,11 @@ function anothers_btns(x) {
                     .map(node => node.textContent.trim())            // Nettoie les espaces
                     .join("");                                       // Concatène les textes
                 
-                  document.querySelector('.pop_up textarea').value= textContent;
+                document.querySelector('.pop_up textarea').value= textContent;
                 if (text) {
-                    console.log(text)
+                    console.log(text);
                     document.querySelector('.pop_up textarea').value= text.textContent.trim();
                 }
-    
             }
     });
 
@@ -404,7 +407,7 @@ function hide_popup() {
         document.querySelector('.add_comment').classList.remove("rotateIn");
         document.querySelector('.add_comment').classList.add("rotateOut");
         document.querySelector(".comment_enter").classList.remove("fadeOut","fadeIn");
-    }, 550);
+    }, 525);
 };
 
 function hide_delete_popup() {
