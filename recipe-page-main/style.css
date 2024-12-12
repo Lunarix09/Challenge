@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-sérif;
+}
+body{
+    background-color: hsl(30, 54%, 90%);
+}
+.column{
+    background-color: hsl(0, 0%, 100%);
+    width: 60%;
+    height: auto;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 5%;
+    left: 20%;
+    margin-bottom: 20px;
+}
+img{
+    margin-bottom: 25px;
+    border-radius: 12px;
+    width: 100%;
+    height: 26%;
+}
+h1,h2, .p1, .ul1{
+    margin-bottom: 20px;
+}
+.p1{
+    color: hsl(30, 10%, 34%);
+    text-align: justify;
+}
+.ul1 ul span{
+    color: hsl(24, 5%, 18%);
+    font-weight: 600;
+}
+.ul1 ul{
+    color: hsl(30, 10%, 34%);
+    padding-left: 15px;
+}
+.ul1 ul li::marker{
+    color: hsl(332, 51%, 32%);
+    font-size: 22px;
+}
+.ul1{
+    background-color: hsl(330, 100%, 98%);
+    padding: 20px;
+    border-radius: 9px;
+}
+.h2{
+    color: hsl(332, 51%, 32%);
+}
+.ingredients{
+    margin-bottom: 20px;
+    color: hsl(30, 10%, 34%);
+    text-align: justify;
+    border-bottom: 1.5px solid hsl(30, 18%, 87%);
+}
+.ingredients h2{
+    color: hsl(14, 45%, 36%)
+}
+.ingredients li::marker{
+    font-size: 22px;
+}
+.ingredients ul{
+    color: hsl(30, 10%, 34%);
+    padding-left: 20px;
+}
+.instructions{
+    color: hsl(14, 45%, 36%);
+    margin-bottom: 20px;
+    text-align: justify;
+    border-bottom: 1.5px solid hsl(30, 18%, 87%);
+}
+.instructions ol{
+    padding-left: 20px;
+}
+.instructions ol li::marker, .instructions ol span{
+    color: hsl(14, 45%, 36%);
+    font-weight: 600;
+}
+.instructions ol li{
+    margin-bottom: 25px;
+}
+.nutrition h2{
+    color: hsl(14, 45%, 36%);
+}
+.table{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1.5px solid hsl(30, 18%, 87%);
+}
+.nutrition p{
+    margin-bottom: 12px;
+}
+.table .sp1{
+    color: hsl(14, 45%, 36%);
+    font-weight: 400;
+}
+.table .sp2{
+    color: hsl(14, 45%, 36%);
+    font-weight: 600;
+}
+.attribution {
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: hsl(30, 10%, 34%);
+    padding: 10px;
+}
+.attribution a {
+    text-decoration: none;
+    color: hsl(14, 45%, 36%);
+    font-weight: 900;
+}
+@media screen and (max-width:375px) {
+    .column{
+        width: 99%;
+        left: 0.5%;
+    }
+}
+@media screen and (max-width:570px) and (min-width:376px) {
+    .column{
+        width: 80%;
+        left: 10%;
+    }
+}
