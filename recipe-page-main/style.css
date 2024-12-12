@@ -58,6 +58,7 @@ h1,h2, .p1, .ul1{
     color: hsl(30, 10%, 34%);
     text-align: justify;
     border-bottom: 1.5px solid hsl(30, 18%, 87%);
+    padding-bottom: 18px;
 }
 .ingredients h2{
     color: hsl(14, 45%, 36%)
