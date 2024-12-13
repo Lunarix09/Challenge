@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-sérif;
+}
+body{
+    background-color: hsl(30, 38%, 92%);
+}
+.perfume{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0;
+    width: 65%;
+    height: 75%;
+    position: absolute;
+    top: 12.5%;
+    left: 17.5%;
+    border-radius: 16px;
+}
+.image{
+    grid-column: 1;  
+}
+.image img{
+    width: 100%;
+    border-radius: 12px 0px 0px 12px;
+    height: 75%;
+}
+.infos{
+    grid-column: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0px 12px 12px 0px;
+    height: 75%;
+}
+p{
+    color: hsl(228, 12%, 48%); 
+}
+.p1{
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 6px;  
+    font-size: 1em;
+}
+h1{
+    font-weight: 700;
+    margin-bottom: 22px; 
+    color: hsl(212, 21%, 14%);
+    font-size: 32px;
+} 
+.p2{
+    margin-bottom: 22px; 
+    font-size: 1em;
+    text-align: justify;
+}
+.infos div div{
+    display: flex;
+    justify-content: space-between;
+}
+.price{
+    text-decoration: line-through;
+    font-size: 1em;
+    color: hsl(228, 12%, 48%);
+}
+.sold_price{
+    color: hsl(158, 36%, 37%);
+    font-weight: 700;
+    font-size: 2em;
+}
+button{
+    background-color: hsl(158, 36%, 37%);
+    padding: 4% 12%;
+    font-size: 20px;
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+button img{
+    margin-right: 12px;
+}
+button:active{
+    background-color: hsl(157, 46%, 19%);
+}
+.attribution {
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: hsl(228, 12%, 48%);
+    padding: 10px;
+    position: absolute;
+    bottom: -15%;
+    right: 30%;
+    font-size: 16px;
+}
+  
+.attribution a {
+    text-decoration: none;
+    color: hsl(158, 36%, 37%);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1000px){
+    h1{
+        margin-bottom: 8px; 
+        font-size: 23px;
+    }
+    .sold_price{
+        font-size: 23px;
+    }
+    .perfume{
+        width: 70%;
+        height: 85%;
+        top: 12.5%;
+        left: 15%;
+    }
+}
+@media screen and (max-width: 825px){
+    h1{
+        font-size: 28px;
+    }
+    .sold_price{
+        font-size: 28px;
+    }
+    .perfume{
+        width: 90%;
+        height: 90%;
+        top: 5%;
+        left: 5%;
+    }
+    .p1{
+        margin-bottom: 8px; 
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 665px){
+    h1{
+        margin-bottom: 8px; 
+        font-size: 24px;
+    }
+    .sold_price{
+        font-size: 24px;
+    }
+    .perfume{
+        height: 95%;
+        top: 2.5%;
+        left: 5%;
+    }
+} 
+@media screen and (max-width: 647px){
+    .perfume{
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        height: auto;
+        position: initial;
+        margin: 2.5% 2%;
+        background-color: hsl(0, 0%, 100%);
+    }
+    .image img{
+        border-radius: 12px 12px 0px 0px ;
+        height: 45%;
+        width: 100%;
+    }
+    .infos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 0px 0px 12px 12px ;
+        height: 50%;
+    }
+    button {
+        padding: 3% 1%;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .sold_price, h1{
+        font-size: 1.5em;
+    }
+    .p1{
+        font-size: 1em;
+    }
+    .attribution {
+        position: relative;
+        bottom: 0%;
+        right: 0%;
+        flex-wrap: wrap;
+        margin-top: 5%;
+    }
+} 
