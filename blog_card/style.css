@@ -48,6 +48,7 @@ body{background-color: hsl(47, 88%, 63%);}
     color: hsl(0, 0%, 7%);
     padding: 5px;
     background-color: hsl(47, 88%, 63%);
+    margin-left: 6px;
 }
 .learning_container{
     width: 25%;
@@ -115,7 +116,6 @@ h1:hover{
     .card{
         width: 78%;
         height: 98%;
-        top: 0.3%
         position: absolute;
         left: 10%;
     }
